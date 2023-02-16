@@ -1,3 +1,4 @@
+/* Utilities */
 function getValue(elementId){
     return parseFloat(document.getElementById(elementId).value);
 }
@@ -7,6 +8,8 @@ function getValueText(elementId){
 function setValue(elementId, val){
     document.getElementById(elementId).innerText = val;
 }
+
+/* Calculate Click Handler */
 document.getElementById('calculate-btn').addEventListener('click', function(){
     const getIncome = getValue('income');
     const getFood = getValue('food');
@@ -20,6 +23,7 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
     setValue('balance', balance);
 });
 
+/* Save Click Handler */
 document.getElementById('btn-save').addEventListener('click', function(){
     const getIncome = getValue('income');
     const getPreviousBalance = getValueText('balance');
