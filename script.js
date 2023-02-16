@@ -19,6 +19,11 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
     const totalExpence = getFood + getRent + getClothes;
     const balance = getIncome - totalExpence;
 
+  if(isNaN(getFood) || isNaN(getRent) || isNaN(getClothes) || totalExpence > getIncome){
+    alert(`Error: Invalid Input.\nExceed amount limit $${totalExpence}\nCan't expences more than $${getIncome}`);
+    return;
+  }
+
     setValue('total-expense', totalExpence);
     setValue('balance', balance);
 });
